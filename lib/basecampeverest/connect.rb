@@ -21,11 +21,11 @@ module Basecampeverest
     # @user_agent = "PutAnythingHere (first.last@example.com)"
     # @basecamp_ID = "123456"
     # Basecampeverest::Connect.new(@basecamp_ID, @authorization, @user_agent)
-    # 
+    
     # => #<Basecampeverest::Connect:0x007fc8652eca18>
-    # 
+    
     # Basecampeverest::Project.all
-    # 
+    
     # =>[{"id"=>494832908, "name"=>"Cool Basecamp Project", "description"=>"this is a description", "archived"=>false, "is_client_project"=>false, 
     # "created_at"=>"2013-11-06T13:53:17.000-05:00", "updated_at"=>"2013-12-05T13:34:20.000-05:00", "draft"=>false,
     # "last_event_at"=>"2013-12-05T13:34:20.000-05:00", "starred"=>false,
