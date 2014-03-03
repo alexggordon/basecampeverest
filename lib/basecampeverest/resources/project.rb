@@ -132,5 +132,5 @@ module Basecampeverest; class Project
         message
     end
 
-# End module and class
+# end module and class
 end; end
