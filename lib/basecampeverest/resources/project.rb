@@ -50,12 +50,12 @@ module Basecampeverest; class Project
     # @return [Basecampeverest::Project] the project information from the Basecamp API
     def self.update(project_id, options={})
         post_params = {
-          :body => {:name => name, :description => description}.to_json,
+          :body => options.to_json,
           :headers => Basecampeverest::Connect.merge({'Content-Type' => 'application/json'})
         }
 
         # make the http basecamp call
-        response = Basecampeverest::Connect.put "/projects/#{project_id}.json"
+        response = Basecampeverest::Connect.put "/projects/#{project_id}.json", post_params
 
         # parse the response to remove HTTParty info
         response.parsed_response
