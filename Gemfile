@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem 'oauth2'
 gem 'basecampeverest', :path => File.expand_path("..", __FILE__)
 gem 'activeresource', '>= 2.3.0'
+gem 'httparty'
 
 group :development do
   gem  'rake'

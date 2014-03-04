@@ -69,6 +69,7 @@ PLATFORMS
 DEPENDENCIES
   activeresource (>= 2.3.0)
   basecampeverest!
+  httparty
   mg (>= 0.0.8)
   oauth2
   rake

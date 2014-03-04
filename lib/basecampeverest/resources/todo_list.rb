@@ -40,7 +40,15 @@ module Basecampeverest; class TodoList
 	# @return [Basecampeverest::TodoList] all todo lists for all projects from the Basecamp API
 	def self.find(project_id, todo_list_id)
 		url = "/projects/#{project_id}/todolists/#{todo_list_id}.json"
-		response = self.class.get url
+		response = Basecampeverest::Connect.get url
+
+		# parse the response to remove HTTParty info
+		response.parsed_response
+	end
+
+	def self.for_project(project_id)
+		url = "/projects/#{project_id}/todolists.json"
+		response = Basecampeverest::Connect.get url
 
 		# parse the response to remove HTTParty info
 		response.parsed_response
@@ -52,7 +60,7 @@ module Basecampeverest; class TodoList
 	# @return [Basecampeverest::TodoList]  all todo_lists assigned to a specific person from the Basecamp API
 	def self.all_assigned(person_id)
 		url = "/people/#{person_id}/assigned_todos.json"
-		response = self.class.get url
+		response = Basecampeverest::Connect.get url
 
 		# parse the response to remove HTTParty info
 		response.parsed_response
