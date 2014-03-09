@@ -94,21 +94,21 @@ This module checks for access to projects. [Access API Reference.](https://githu
 
 There are four methods.
 
-* Access for Project
+* __Access for Project__
 ```
 Basecampeverest::Access.for_project(project_id)
 ```
 Returns a hash with the people that have access to the project. 
 
 
-* Access for Calendar
+* __Access for Calendar__
 ```
 Basecampeverest::Access.for_calendar(calendar_id)
 ```
 Returns a hash with the people that have access to a calendar. 
 
 
-* Grant Access to Project
+* __Grant Access to Project__
 
 The options hash is a hash with the user ID's and email addresses formatted like so:
 ```
@@ -124,7 +124,7 @@ Basecampeverest::Access.grant_project(project_id, options={})
 Returns a 204 if successful. 
 
 
-* Revoke Access to user.
+* __Revoke Access to user.__
 
 Pass in the user ID of the user to revoke access to the project. To obtain the user id take a look in the [people](https://github.com/alexggordon/Basecampeverest#people) section. 
 
@@ -149,7 +149,7 @@ This module controls the calendar. [Calendar API Reference](https://github.com/a
 
 There are five methods.
 
-* Find all Calendars
+* __Find all Calendars__
 
 This method returns all calendars for a project.
 
@@ -159,7 +159,7 @@ Basecampeverest::Calendar.all
 Returns an array of all the calendars
 
 
-* Find a specific Calendar
+* __Find a specific Calendar__
 
 This method returns a specific calendar.
 
@@ -169,7 +169,7 @@ Basecampeverest::Calendar.find(calendar_id)
 Returns information about a specific calendar
 
 
-* Create a Calendar
+* __Create a Calendar__
 
 This method creates a calendar. The options hash should just contain a :name element. 
 
@@ -179,7 +179,7 @@ Basecampeverest::Calendar.new(options={})
 Returns a 201 with the information of the created calendar. 
 
 
-* Update a Calendar
+* __Update a Calendar__
 
 This method updates a calendar. The options hash should just contain the updated calendar information. 
 
@@ -189,7 +189,7 @@ Basecampeverest::Calendar.new(options={})
 Returns a 200 with the information of the updated calendar. 
 
 
-* Delete a Calendar
+* __Delete a Calendar__
 
 This method deletes a calendar. 
 
