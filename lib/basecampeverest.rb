@@ -5,6 +5,7 @@ require 'time'
 require 'active_resource'
 
 require 'basecampeverest/connect'
+require 'basecampeverest/convert'
 require 'basecampeverest/resources/access'
 require 'basecampeverest/resources/attachment'
 require 'basecampeverest/resources/calendar'

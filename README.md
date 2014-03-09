@@ -15,7 +15,7 @@ will return all the projects, and
 Basecampeverest::TodoList.all 
 ```
 
-will return ALL the Todo Lists for ALL projects. In the same methodolgy, any method that includes the word "find" is project specific where it applies. 
+will return ALL the Todo Lists for ALL projects. In the same methodology, any method that includes the word "find" is project specific where it applies. 
 
 
 INDEX
@@ -54,6 +54,12 @@ bundle install
 ```
 and you should be all set!
 
+Alternatively, you can run 
+```
+gem install basecampeverest
+```
+
+
 
 Initializing the Connection
 ----------------
@@ -84,14 +90,116 @@ Initializing the controller will return.
 
 Accesses
 ----------------
+This module checks for access to projects. [Access API Reference.](https://github.com/basecamp/bcx-api/blob/master/sections/accesses.md)
+
+There are four methods.
+
+* Access for Project
+```
+Basecampeverest::Access.for_project(project_id)
+```
+Returns a hash with the people that have access to the project. 
+
+
+* Access for Calendar
+```
+Basecampeverest::Access.for_calendar(calendar_id)
+```
+Returns a hash with the people that have access to a calendar. 
+
+
+* Grant Access to Project
+
+The options hash is a hash with the user ID's and email addresses formatted like so:
+```
+{ "ids" => { 5, 6, 10 },
+  "email_addresses" => { "someone@example.com", "someoneelse@example.com" } }
+```
+
+Pass in this hash to the method. 
+
+```
+Basecampeverest::Access.grant_project(project_id, options={})
+```
+Returns a 204 if successful. 
+
+
+* Revoke Access to user.
+
+Pass in the user ID of the user to revoke access to the project. To obtain the user id take a look in the [people](https://github.com/alexggordon/Basecampeverest#people) section. 
+
+```
+Basecampeverest::Access.revoke_project(project_id, options={})
+```
+Returns a 204 if successful. 
+
+
 
 Attachments
 ----------------
+This module is the first of a two step process for file uploads. [Attachment API Reference](https://github.com/alexggordon/Basecampeverest#Attachments)
+
+It has not been implemented yet. 
+
+
 
 Calendars
 ----------------
+This module controls the calendar. [Calendar API Reference](https://github.com/alexggordon/Basecampeverest#Calendars)
 
-Calendar
+There are five methods.
+
+* Find all Calendars
+
+This method returns all calendars for a project.
+
+```
+Basecampeverest::Calendar.all
+```
+Returns an array of all the calendars
+
+
+* Find a specific Calendar
+
+This method returns a specific calendar.
+
+```
+Basecampeverest::Calendar.find(calendar_id)
+```
+Returns information about a specific calendar
+
+
+* Create a Calendar
+
+This method creates a calendar. The options hash should just contain a :name element. 
+
+```
+Basecampeverest::Calendar.new(options={})
+```
+Returns a 201 with the information of the created calendar. 
+
+
+* Update a Calendar
+
+This method updates a calendar. The options hash should just contain the updated calendar information. 
+
+```
+Basecampeverest::Calendar.new(options={})
+```
+Returns a 200 with the information of the updated calendar. 
+
+
+* Delete a Calendar
+
+This method deletes a calendar. 
+
+```
+Basecampeverest::Calendar.delete(calendar_id)
+```
+Returns a message with the success or failure of the deletion. 
+
+
+Calendar Events
 ----------------
 
 Comments
