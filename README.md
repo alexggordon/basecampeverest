@@ -95,43 +95,43 @@ This module checks for access to projects. [Access API Reference.](https://githu
 There are four methods.
 
 1. __Access for Project__
-```
-Basecampeverest::Access.for_project(project_id)
-```
-Returns a hash with the people that have access to the project. 
+	```
+	Basecampeverest::Access.for_project(project_id)
+	```
+	Returns a hash with the people that have access to the project. 
 
 
 2. __Access for Calendar__
-```
-Basecampeverest::Access.for_calendar(calendar_id)
-```
-Returns a hash with the people that have access to a calendar. 
+	```
+	Basecampeverest::Access.for_calendar(calendar_id)
+	```
+	Returns a hash with the people that have access to a calendar. 
 
 
 3. __Grant Access to Project__
 
-The options hash is a hash with the user ID's and email addresses formatted like so:
-```
-{ "ids" => { 5, 6, 10 },
-  "email_addresses" => { "someone@example.com", "someoneelse@example.com" } }
-```
+	The options hash is a hash with the user ID's and email addresses formatted like so:
+	```
+	{ "ids" => { 5, 6, 10 },
+	  "email_addresses" => { "someone@example.com", "someoneelse@example.com" } }
+	```
 
-Pass in this hash to the method. 
+	Pass in this hash to the method. 
 
-```
-Basecampeverest::Access.grant_project(project_id, options={})
-```
-Returns a 204 if successful. 
+	```
+	Basecampeverest::Access.grant_project(project_id, options={})
+	```
+	Returns a 204 if successful. 
 
 
 4. __Revoke Access to user.__
 
-Pass in the user ID of the user to revoke access to the project. To obtain the user id take a look in the [people](https://github.com/alexggordon/Basecampeverest#people) section. 
+	Pass in the user ID of the user to revoke access to the project. To obtain the user id take a look in the [people](https://github.com/alexggordon/Basecampeverest#people) section. 
 
-```
-Basecampeverest::Access.revoke_project(project_id, options={})
-```
-Returns a 204 if successful. 
+	```
+	Basecampeverest::Access.revoke_project(project_id, options={})
+	```
+	Returns a 204 if successful. 
 
 
 
