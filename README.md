@@ -151,52 +151,52 @@ There are five methods.
 
 1. __Find all Calendars__
 
-This method returns all calendars for a project.
+	This method returns all calendars for a project.
 
-```
-Basecampeverest::Calendar.all
-```
-Returns an array of all the calendars
+	```
+	Basecampeverest::Calendar.all
+	```
+	Returns an array of all the calendars
 
 
 2. __Find a specific Calendar__
 
-This method returns a specific calendar.
+	This method returns a specific calendar.
 
-```
-Basecampeverest::Calendar.find(calendar_id)
-```
-Returns information about a specific calendar
+	```
+	Basecampeverest::Calendar.find(calendar_id)
+	```
+	Returns information about a specific calendar
 
 
 3. __Create a Calendar__
 
-This method creates a calendar. The options hash should just contain a :name element. 
+	This method creates a calendar. The options hash should just contain a :name element. 
 
-```
-Basecampeverest::Calendar.new(options={})
-```
-Returns a 201 with the information of the created calendar. 
+	```
+	Basecampeverest::Calendar.new(options={})
+	```
+	Returns a 201 with the information of the created calendar. 
 
 
 4. __Update a Calendar__
 
-This method updates a calendar. The options hash should just contain the updated calendar information. 
+	This method updates a calendar. The options hash should just contain the updated calendar information. 
 
-```
-Basecampeverest::Calendar.new(options={})
-```
-Returns a 200 with the information of the updated calendar. 
+	```
+	Basecampeverest::Calendar.new(options={})
+	```
+	Returns a 200 with the information of the updated calendar. 
 
 
 5. __Delete a Calendar__
 
-This method deletes a calendar. 
+	This method deletes a calendar. 
 
-```
-Basecampeverest::Calendar.delete(calendar_id)
-```
-Returns a message with the success or failure of the deletion. 
+	```
+	Basecampeverest::Calendar.delete(calendar_id)
+	```
+	Returns a message with the success or failure of the deletion. 
 
 
 Calendar Events
@@ -208,109 +208,109 @@ There are eleven methods.
 
 1. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 2. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 3. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 4. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 5. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 6. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 7. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 8. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 9. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 10. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 11. __Upcoming events for the Project__
 
-This method
+	This method
 
-```
-Basecampeverest::
-```
-Returns a 
+	```
+	Basecampeverest::
+	```
+	Returns a 
 
 
 Comments
