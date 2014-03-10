@@ -1,6 +1,6 @@
-fGem::Specification.new do |everest|
+Gem::Specification.new do |everest|
   everest.name        = 'basecampeverest'
-  everest.version     = '0.0.1'
+  everest.version     = '0.1.1'
   everest.date        = Time.now
   everest.summary     = "Ruby Gem to commmunicate with Basecamp's API"
   everest.authors     = ["Alex Gordon"]

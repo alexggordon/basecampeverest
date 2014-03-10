@@ -94,21 +94,21 @@ This module checks for access to projects. [Access API Reference.](https://githu
 
 There are four methods.
 
-* __Access for Project__
+1. __Access for Project__
 ```
 Basecampeverest::Access.for_project(project_id)
 ```
 Returns a hash with the people that have access to the project. 
 
 
-* __Access for Calendar__
+2. __Access for Calendar__
 ```
 Basecampeverest::Access.for_calendar(calendar_id)
 ```
 Returns a hash with the people that have access to a calendar. 
 
 
-* __Grant Access to Project__
+3. __Grant Access to Project__
 
 The options hash is a hash with the user ID's and email addresses formatted like so:
 ```
@@ -124,7 +124,7 @@ Basecampeverest::Access.grant_project(project_id, options={})
 Returns a 204 if successful. 
 
 
-* __Revoke Access to user.__
+4. __Revoke Access to user.__
 
 Pass in the user ID of the user to revoke access to the project. To obtain the user id take a look in the [people](https://github.com/alexggordon/Basecampeverest#people) section. 
 
@@ -137,7 +137,7 @@ Returns a 204 if successful.
 
 Attachments
 ----------------
-This module is the first of a two step process for file uploads. [Attachment API Reference](https://github.com/alexggordon/Basecampeverest#Attachments)
+This module is the first of a two step process for file uploads. [Attachment API Reference](https://github.com/basecamp/bcx-api/blob/master/sections/attachments.md)
 
 It has not been implemented yet. 
 
@@ -145,11 +145,11 @@ It has not been implemented yet.
 
 Calendars
 ----------------
-This module controls the calendar. [Calendar API Reference](https://github.com/alexggordon/Basecampeverest#Calendars)
+This module controls the calendar. [Calendar API Reference](https://github.com/basecamp/bcx-api/blob/master/sections/calendars.md)
 
 There are five methods.
 
-* __Find all Calendars__
+1. __Find all Calendars__
 
 This method returns all calendars for a project.
 
@@ -159,7 +159,7 @@ Basecampeverest::Calendar.all
 Returns an array of all the calendars
 
 
-* __Find a specific Calendar__
+2. __Find a specific Calendar__
 
 This method returns a specific calendar.
 
@@ -169,7 +169,7 @@ Basecampeverest::Calendar.find(calendar_id)
 Returns information about a specific calendar
 
 
-* __Create a Calendar__
+3. __Create a Calendar__
 
 This method creates a calendar. The options hash should just contain a :name element. 
 
@@ -179,7 +179,7 @@ Basecampeverest::Calendar.new(options={})
 Returns a 201 with the information of the created calendar. 
 
 
-* __Update a Calendar__
+4. __Update a Calendar__
 
 This method updates a calendar. The options hash should just contain the updated calendar information. 
 
@@ -189,7 +189,7 @@ Basecampeverest::Calendar.new(options={})
 Returns a 200 with the information of the updated calendar. 
 
 
-* __Delete a Calendar__
+5. __Delete a Calendar__
 
 This method deletes a calendar. 
 
@@ -201,6 +201,117 @@ Returns a message with the success or failure of the deletion.
 
 Calendar Events
 ----------------
+This module controls the calendar events. A quick note, this is not to be confused with events, which is different. Yes they could have been better named, but they weren't. [Calendar Events API Reference](https://github.com/basecamp/bcx-api/blob/master/sections/calendar_events.md)
+
+There are eleven methods.
+
+
+1. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+
+2. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+3. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+
+4. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+
+5. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+6. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+
+7. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+
+8. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+9. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+
+10. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
+
+11. __Upcoming events for the Project__
+
+This method
+
+```
+Basecampeverest::
+```
+Returns a 
+
 
 Comments
 ----------------
