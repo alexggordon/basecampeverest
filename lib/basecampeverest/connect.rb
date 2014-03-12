@@ -89,22 +89,29 @@ module Basecampeverest
       # nice and pretty now
       authorization = clensed_auth_hash
       
-      # if the authorization has the correct hash values...
-      if authorization.has_key?(:username) && authorization.has_key?(:password)
+    if auth_hash.has_key? :access_token
+      # clear the basic_auth, if it's set
+      self.class.default_options.reject!{ |k| k == :basic_auth }
+                
+      # set the Authorization headers
+      self.class.headers.merge!("Authorization" => "Bearer #{auth_hash[:access_token]}")
 
-        # ... then we pass it off to basic auth
-        self.class.basic_auth authorization[:username], authorization[:password]
-        
-        # check if the user tried passing in some other stupid stuff.
-        # this should never be the case if the user follows instructions. 
-        self.class.headers.reject!{ |k, v| k == "Authorization" }
+    elsif authorization.has_key?(:username) && authorization.has_key?(:password)
 
-      else
-        # something inportant is missing if we get here. 
-        raise "Incomplete Authorization hash. Please check the Authentication Hash."
+      # ... then we pass it off to basic auth
+      self.class.basic_auth authorization[:username], authorization[:password]
+      
+      # check if the user tried passing in some other stupid stuff.
+      # this should never be the case if the user follows instructions. 
+      self.class.headers.reject!{ |k, v| k == "Authorization" }
 
-        #end else 
-      end
+    else
+      # something inportant is missing if we get here. 
+      raise "Incomplete Authorization hash. Please check the Authentication Hash."
+
+      #end else 
+    end
+
 
     # end method
     end
