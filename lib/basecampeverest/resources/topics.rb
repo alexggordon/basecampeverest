@@ -1,87 +1,26 @@
 module Basecampeverest; class Topics
+    # Topics are anything in basecamp that has a comment. In otherwords, if there are no comments on a project then this will return nothing. 
 
-    # find all #### via the Basecamp API
+    # find all topics for all projects via the Basecamp API
     # 
-    # @return [Basecampeverest::Project] #### from the Basecamp API
+    # @return [Basecampeverest::Project] all topics from the Basecamp API
     def self.all
-        url = 
-        response = Basecampeverest::Connect.get 
+        url = "/topics.json"
+        response = Basecampeverest::Connect.get url
 
         # parse the response to remove HTTParty info
         response.parsed_response
     end
 
-    # #### via the Basecamp API
+    # get all project topics via the Basecamp API
     # 
-    # @param [Basecampeverest::Project] ####
-    # @return [Basecampeverest::Project] #### from the Basecamp API
-    def self.find()
-        url = 
-        response = Basecampeverest::Connect.get 
+    # @param [Basecampeverest::Project] project_id the project id of the basecamp project to get the comment for 
+    # @return [Basecampeverest::Project] the topic from the Basecamp API
+    def self.find(project_id)
+        url = "/projects/#{project_id}/topics.json"
+        response = Basecampeverest::Connect.get url
 
         # parse the response to remove HTTParty info
         response.parsed_response
     end
-
-    # #### via the Basecamp API
-    # 
-    # 
-    # @param [Basecampeverest::Project] ####
-    # @param [Basecampeverest::Project] ####
-    # @return [Basecampeverest::Project] #### from the Basecamp API
-    def self.new(options={})
-        post_params = {
-          :body => options.to_json,
-          :headers => Basecampeverest::Connect.headers.merge({'Content-Type' => 'application/json'})
-        }
-        # make the http basecamp call
-        url = "####"
-        response = Basecampeverest::Connect.post url, post_params
-
-        # parse the response to remove HTTParty info
-        response.parsed_response
-    end
-
-    # #### via the Basecamp API
-    # 
-    # @param [Basecampeverest::Project] ####
-    # @param [Basecampeverest::Project] #### 
-    # @return [Basecampeverest::Project]  from the Basecamp API
-    def self.update()
-        post_params = {
-          :body => options.to_json,
-          :headers => Basecampeverest::Connect.merge({'Content-Type' => 'application/json'})
-        }
-
-        # make the http basecamp call
-        url = 
-        response = Basecampeverest::Connect.put url, post_params
-
-        # parse the response to remove HTTParty info
-        response.parsed_response
-    end
-
-
-    # #### via the Basecamp API
-    # 
-    # @param [Basecampeverest::Project] ####
-    # @return [Basecampeverest::Project] ####
-    def self.delete()
-        url = "####"
-        response = Basecampeverest::Connect.delete url
-
-        # This checks the response code for validity and error checking
-        if response.code == 204
-            message = "#### successfully deleted"
-        elsif response.code == 403
-            message = "You do not have permission to delete this ####"
-        else 
-            message = "Invalid project ID or authentication. The #### was not deleted."
-        end
-
-        # return the message
-        message
-    end
-
-# end module and class
 end; end

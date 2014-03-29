@@ -315,6 +315,39 @@ There are eleven methods.
 
 Comments
 ----------------
+This module deals with comments to projects. [Comments API Reference.](https://github.com/basecamp/bcx-api/blob/master/sections/comments.md)
+
+There are three methods.
+
+
+1. __New Comment__
+
+	This method creates a new comment
+
+	```
+	Basecampeverest::Comment.new()
+	```
+	Returns a 
+
+2. __Attach File__
+
+	This method attaches a file to an already existing comment
+
+	```
+	Basecampeverest::Comment
+	```
+	Returns a 
+
+3. __Delete Comment__
+
+	This method deletes a specific comment
+
+	```
+	Basecampeverest::Comment.
+	```
+	Returns a 
+
+
 
 Documents
 ----------------
@@ -330,6 +363,83 @@ People
 
 Projects
 ----------------
+This module deals with managing projects. [Projects API Reference.](https://github.com/basecamp/bcx-api/blob/master/sections/projects.md)
+
+There are seven methods.
+
+1. __Get All Projects__
+
+	This method gets all projects for the basecamp account. 
+
+	```
+	Basecampeverest::Project.All
+	```
+	Returns all the projects associated with the basecamp account. 
+2. __Find A Specific Project__
+
+	This method finds and returns information on a specific project
+
+	Pass in the project id
+
+	```
+	Basecampeverest::Project.find(project_id)
+	```
+	Returns an array with the information of the project. 
+3. __New Project__
+
+	This method creates a new project. 
+
+	Pass in a hash with the name and the details of the project to be created. 
+
+	```
+	Basecampeverest::Project.New(options={})
+	```
+	Returns an array with the project information. 
+
+4. __Update a Project__
+
+	This method updates a project with whatever information you want to change. 
+	However, the project_id of the project cannot be changed. 
+
+	Pass in the project id of the project you wish to update and the options you would like to change.  
+
+	```
+	Basecampeverest::Project(project_id, options={})
+	```
+	Returns an array containing the updated information for the project. 
+
+5. __Archive a Project__
+
+	This method archives a project.
+
+	Pass in a hash containing the project id of the project.
+
+	```
+	Basecampeverest::Project.Archive(project_id)
+	```
+	Returns a message with the result of the archive.
+6. __Activate a Project__
+
+	This method activates a project. 
+
+	Pass in a hash containing the project id of the project.
+
+	```
+	Basecampeverest::Project.Activate(project_id)
+	```
+	Returns a message with the result of the activation. 
+7. __Delete a Project__
+
+	This method delete a project. 
+
+	Pass in a hash containing the project id of the project.
+
+	```
+	Basecampeverest::Project.Delete(project_id)
+	```
+	Returns a message with the result of the delete.
+
+
 
 Basecampeverest::Project.all
 
@@ -349,9 +459,34 @@ Todo Lists
 
 Topics
 ----------------
+This module deals with the topics of different projects. [Topics API Reference.](https://github.com/basecamp/bcx-api/blob/master/sections/topics.md)
+
+There are two methods.
+
+1. __Get All Topics__
+
+	This method gets all topics for all projects. A topic is anything (message, todolist, etc...) that has a comment. 
+
+	```
+	Basecampeverest::Topics.All
+	```
+	Returns an array of all the topics
+2. __Get a Project Specific Topic__
+
+	This method returns the topics for a project.
+
+	```
+	Basecampeverest::Topics.find(project_id)
+	```
+	Returns an array of all topics for a specific project. 
 
 Uploads
 ----------------
+
+To Do on the project.
+----------------
+* File Attatchments. Need to do comments, 
+
 
 License
 ----------------
