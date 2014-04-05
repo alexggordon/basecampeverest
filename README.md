@@ -206,12 +206,14 @@ This module controls the calendar events. A quick note, this is not to be confus
 There are eleven methods.
 
 
-1. __Upcoming events for the Project__
+1. __Upcoming events for the Calendar__
 
-	This method
+	This method finds all the events from a calendar from Basecamp
+	
+	Pass in the calendar_id as a parameter
 
 	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.find_calendar
 	```
 	Returns a 
 
@@ -221,84 +223,84 @@ There are eleven methods.
 	This method
 
 	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
-3. __Upcoming events for the Project__
+3. __Find past events for a Project__
 
 	This method
 
 	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
 
-4. __Upcoming events for the Project__
+4. __Find past events for a Calendar__
 
 	This method
 
 	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
 
-5. __Upcoming events for the Project__
+5. __Find a specific Calendar Event__
 
 	This method
 
 	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
-6. __Upcoming events for the Project__
+6. __Find a specific Project Event__
 
 	This method
 
 	```
-	Basecampeverest::
-	```
-	Returns a 
-
-
-7. __Upcoming events for the Project__
-
-	This method
-
-	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
 
-8. __Upcoming events for the Project__
+7. __Create a new Project Event__
 
 	This method
 
 	```
-	Basecampeverest::
-	```
-	Returns a 
-
-9. __Upcoming events for the Project__
-
-	This method
-
-	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
 
-10. __Upcoming events for the Project__
+8. __Create a new Calendar Event__
 
 	This method
 
 	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
+	```
+	Returns a 
+
+9. __Update a Project or Calendar Event__
+
+	This method
+
+	```
+	Basecampeverest::CalendarEvents.
+	```
+	Returns a 
+
+
+10. __Delete a project or Calendar Event__
+
+	This method
+
+	```
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
@@ -308,7 +310,7 @@ There are eleven methods.
 	This method
 
 	```
-	Basecampeverest::
+	Basecampeverest::CalendarEvents.
 	```
 	Returns a 
 
