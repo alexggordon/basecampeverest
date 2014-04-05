@@ -62,8 +62,8 @@ module Basecampeverest; class CalendarEvents
 	    # @param [Basecampeverest::Project] project_id the project_id from basecamp
 	    # @param [Basecampeverest::Project] event_id the event id from basecamp
 	    # @return [Basecampeverest::Project] the specific calendar event from the Basecamp API
-	    def self.find_specific_project(project_id, event_id)
-	        url = "/projects/#{project_id}/calendar_events/#{event_id}.json"
+	    def self.find_specific_calendar(calendar_id, event_id)
+	        url = "/projects/#{calendar_id}/calendar_events/#{event_id}.json"
 	        response = Basecampeverest::Connect.get url
 
 	        # parse the response to remove HTTParty info
