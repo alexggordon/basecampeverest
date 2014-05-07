@@ -1,34 +1,69 @@
 module Basecampeverest; class CalendarEvents
 
-	    # find all #### via the Basecamp API
+	    # find events from a calendar via the Basecamp API
 	    # 
-	    # @return [Basecampeverest::Project] #### from the Basecamp API
-	    def self.all
-	        url = 
-	        response = Basecampeverest::Connect.get 
-
-	        # parse the response to remove HTTParty info
-	        response.parsed_response
-	    end
-
-	    # #### via the Basecamp API
-	    # 
-	    # @param [Basecampeverest::Project] project_id
-	    # @return [Basecampeverest::Project] #### from the Basecamp API
-	    def self.find(project_id)
-	        url = "/projects/#{project_id}/calendar_events.json"
+	    # @param [Basecampeverest::Project] calendar_id the calendar id from basecamp
+	    # @return [Basecampeverest::Project] current calendar events from the Basecamp API
+	    def self.find_calendar(calendar_id)
+	        url = "/projects/#{calendar_id}/calendar_events.json"
 	        response = Basecampeverest::Connect.get url
 	        # parse the response to remove HTTParty info
 	        response.parsed_response
 	    end
 
-	    # #### via the Basecamp API
+	    # find events from a project via the Basecamp API
 	    # 
-	    # @param [Basecampeverest::Project] project_id
-	    # @param [Basecampeverest::Project] project_id
-	    # @return [Basecampeverest::Project] #### from the Basecamp API
-	    def self.find_specific(project_id, event_id)
+	    # @param [Basecampeverest::Project] project_id the project_id from basecamp
+	    # @return [Basecampeverest::Project] current project events from the Basecamp API
+	    def self.find_project(project_id)
+	        url = "/calendars/#{project_id}/calendar_events.json"
+	        response = Basecampeverest::Connect.get url
+	        # parse the response to remove HTTParty info
+	        response.parsed_response
+	    end
+
+	    # find past events from a calendar via the Basecamp API
+	    # 
+	    # @param [Basecampeverest::Project] calendar_id the calendar id from basecamp
+	    # @return [Basecampeverest::Project] the past calendar events from the Basecamp API
+	    def self.find_past_calendar(calendar_id)
+	        url = "/calendars/#{calendar_id}/calendar_events/past.json"
+	        response = Basecampeverest::Connect.get url
+	        # parse the response to remove HTTParty info
+	        response.parsed_response
+	    end
+
+	    # find past events from a project via the Basecamp API
+	    # 
+	    # @param [Basecampeverest::Project] project_id the project_id from basecamp
+	    # @return [Basecampeverest::Project] the past project events from the Basecamp API
+	    def self.find_past_project(project_id)
+	        url = "/calendars/#{project_id}/calendar_events/past.json"
+	        response = Basecampeverest::Connect.get url
+	        # parse the response to remove HTTParty info
+	        response.parsed_response
+	    end
+
+	    # find a specific project event via the Basecamp API
+	    # 
+	    # @param [Basecampeverest::Project] project_id the project_id from basecamp
+	    # @param [Basecampeverest::Project] event_id the event id from basecamp
+	    # @return [Basecampeverest::Project] the specific calendar event from the Basecamp API
+	    def self.find_specific_project(project_id, event_id)
 	        url = "/projects/#{project_id}/calendar_events/#{event_id}.json"
+	        response = Basecampeverest::Connect.get url
+
+	        # parse the response to remove HTTParty info
+	        response.parsed_response
+	    end
+
+	    # find a specific calendar event via the Basecamp API
+	    # 
+	    # @param [Basecampeverest::Project] project_id the project_id from basecamp
+	    # @param [Basecampeverest::Project] event_id the event id from basecamp
+	    # @return [Basecampeverest::Project] the specific calendar event from the Basecamp API
+	    def self.find_specific_calendar(calendar_id, event_id)
+	        url = "/projects/#{calendar_id}/calendar_events/#{event_id}.json"
 	        response = Basecampeverest::Connect.get url
 
 	        # parse the response to remove HTTParty info
