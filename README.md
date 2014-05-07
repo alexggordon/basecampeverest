@@ -5,13 +5,13 @@ This is a ruby gem for the [Basecamp API](https://github.com/basecamp/bcx-api/).
 
 A quick note though, hopefully to save some people some frustration, if you see "all" in the method title, then it is not project specific. For example, 
 
-```
+```ruby
 Basecampeverest::Project.all 
 ```
 
 will return all the projects, and 
 
-```
+```ruby
 Basecampeverest::TodoList.all 
 ```
 
@@ -43,19 +43,19 @@ Installation
 ----------------
 Simply go to your gemfile and add
 
-```
+```ruby
 gem 'basecampeverest'
 ```
 
 And then go to the terminal and run
 
-```
+```ruby
 bundle install
 ```
 and you should be all set!
 
 Alternatively, you can run 
-```
+```ruby
 gem install basecampeverest
 ```
 
@@ -66,7 +66,7 @@ Initializing the Connection
 
 The best way to perform the connection is with the ruby :before_filter command 
 
-```
+```ruby
 Class whatever < ApplicationController
 before_filter :basecamp_connect
 ...
@@ -84,7 +84,7 @@ private
 
 Initializing the controller will return.
 
-```
+```ruby
 => #<Basecampeverest::Connect:0x007abcd123455>
 ```
 
@@ -95,14 +95,14 @@ This module checks for access to projects. [Access API Reference.](https://githu
 There are four methods.
 
 1. __Access for Project__
-	```
+	```ruby
 	Basecampeverest::Access.for_project(project_id)
 	```
 	Returns a hash with the people that have access to the project. 
 
 
 2. __Access for Calendar__
-	```
+	```ruby
 	Basecampeverest::Access.for_calendar(calendar_id)
 	```
 	Returns a hash with the people that have access to a calendar. 
@@ -111,14 +111,14 @@ There are four methods.
 3. __Grant Access to Project__
 
 	The options hash is a hash with the user ID's and email addresses formatted like so:
-	```
+	```ruby
 	{ "ids" => { 5, 6, 10 },
 	  "email_addresses" => { "someone@example.com", "someoneelse@example.com" } }
 	```
 
 	Pass in this hash to the method. 
 
-	```
+	```ruby
 	Basecampeverest::Access.grant_project(project_id, options={})
 	```
 	Returns a 204 if successful. 
@@ -128,7 +128,7 @@ There are four methods.
 
 	Pass in the user ID of the user to revoke access to the project. To obtain the user id take a look in the [people](https://github.com/alexggordon/Basecampeverest#people) section. 
 
-	```
+	```ruby
 	Basecampeverest::Access.revoke_project(project_id, options={})
 	```
 	Returns a 204 if successful. 
@@ -153,7 +153,7 @@ There are five methods.
 
 	This method returns all calendars for a project.
 
-	```
+	```ruby
 	Basecampeverest::Calendar.all
 	```
 	Returns an array of all the calendars
@@ -163,7 +163,7 @@ There are five methods.
 
 	This method returns a specific calendar.
 
-	```
+	```ruby
 	Basecampeverest::Calendar.find(calendar_id)
 	```
 	Returns information about a specific calendar
@@ -173,7 +173,7 @@ There are five methods.
 
 	This method creates a calendar. The options hash should just contain a :name element. 
 
-	```
+	```ruby
 	Basecampeverest::Calendar.new(options={})
 	```
 	Returns a 201 with the information of the created calendar. 
@@ -183,7 +183,7 @@ There are five methods.
 
 	This method updates a calendar. The options hash should just contain the updated calendar information. 
 
-	```
+	```ruby
 	Basecampeverest::Calendar.new(options={})
 	```
 	Returns a 200 with the information of the updated calendar. 
@@ -193,7 +193,7 @@ There are five methods.
 
 	This method deletes a calendar. 
 
-	```
+	```ruby
 	Basecampeverest::Calendar.delete(calendar_id)
 	```
 	Returns a message with the success or failure of the deletion. 
@@ -210,7 +210,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -220,7 +220,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -229,7 +229,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -239,7 +239,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -249,7 +249,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -258,7 +258,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -268,7 +268,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -278,7 +278,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -287,7 +287,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -297,7 +297,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -307,7 +307,7 @@ There are eleven methods.
 
 	This method
 
-	```
+	```ruby
 	Basecampeverest::
 	```
 	Returns a 
@@ -333,7 +333,7 @@ Projects
 
 Basecampeverest::Project.all
 
-```
+```ruby
 =>[{"id"=>494832908, "name"=>"Cool Basecamp Project", "description"=>"this is a description", "archived"=>false, "is_client_project"=>false, 
 "created_at"=>"2013-11-06T13:53:17.000-05:00", "updated_at"=>"2013-12-05T13:34:20.000-05:00", "draft"=>false,
 "last_event_at"=>"2013-12-05T13:34:20.000-05:00", "starred"=>false,

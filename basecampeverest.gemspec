@@ -1,6 +1,6 @@
 Gem::Specification.new do |everest|
   everest.name        = 'basecampeverest'
-  everest.version     = '0.1.2.6'
+  everest.version     = '0.1.2.7'
   everest.date        = Time.now
   everest.summary     = "Ruby Gem to commmunicate with Basecamp's API"
   everest.authors     = ["Alex Gordon"]
@@ -16,6 +16,5 @@ Gem::Specification.new do |everest|
   everest.add_development_dependency 'rake'
   everest.add_development_dependency 'mg',        '>= 0.0.8'
   everest.add_development_dependency 'rspec',     '>= 1.3.0'
-
 
 end

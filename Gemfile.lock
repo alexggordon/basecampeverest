@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    basecampeverest (0.1.2.6)
+    basecampeverest (0.1.2.7)
       activeresource (>= 2.3.0)
       httparty (= 0.13.0)
       json (~> 1.8.1)

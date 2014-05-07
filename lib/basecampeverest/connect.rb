@@ -89,12 +89,12 @@ module Basecampeverest
       # nice and pretty now
       authorization = clensed_auth_hash
       
-    if auth_hash.has_key? :access_token
+    if authorization.has_key? :access_token
       # clear the basic_auth, if it's set
       self.class.default_options.reject!{ |k| k == :basic_auth }
                 
       # set the Authorization headers
-      self.class.headers.merge!("Authorization" => "Bearer #{auth_hash[:access_token]}")
+      self.class.headers.merge!("Authorization" => "Bearer #{authorization[:access_token]}")
 
     elsif authorization.has_key?(:username) && authorization.has_key?(:password)
 
